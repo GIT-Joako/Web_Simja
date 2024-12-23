@@ -1,197 +1,186 @@
 /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    background-image: url('Imagenes/Piedra.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Contenedor principal */
+main {
     margin: 20px;
-    background-image: url('Imagenes/Piedra.jpg'); /* Ruta de la imagen de fondo */
-    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir toda la página */
-    background-position: center; /* Centra la imagen de fondo */
 }
 
 /* Estilos del encabezado */
 header {
     text-align: center;
     padding: 10px;
-    background-color: #0367ad; /* Azul rey */
+    background-color: #0367ad;
     color: white;
-    position: relative; /* Asegura que el posicionamiento relativo funcione para el logo */
-    border-radius: 15px; /* Hace que las esquinas sean redondeadas */
+    position: relative;
+    border-radius: 15px;
 }
 
-/* Estilos para el logo */
 .logo {
     position: absolute;
-    top: 10px; /* Ajusta la distancia desde la parte superior según sea necesario */
-    right: 10px; /* Ajusta la distancia desde el lado derecho según sea necesario */
-    width: 20%; /* Ancho del logo como el 20% del contenedor padre */
+    top: 10px;
+    right: 10px;
+    width: 20%;
 }
 
-/* Estilos para el logo */
 .logo img {
-
-    max-width: 200px; /* Ajusta el ancho máximo del logo según sea necesario */
-    height: auto; /* Permite que la altura se ajuste automáticamente según el ancho */
-    border-radius: 15px; /* Bordes*/
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
 }
 
 /* Estilos del botón de navegación */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
 nav button {
-    flex: 1; /* Esta línea se añade para que los botones ocupen el espacio disponible */
-    width: 100%;
-    background-color: #0f6096; /* Azul rey */
+    flex: 1;
+    max-width: 200px;
+    background-color: #0f6096;
     color: white;
     border: none;
     padding: 10px;
     margin: 5px;
     cursor: pointer;
-    border-radius: 15px; /* Hace que las esquinas sean redondeadas */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Añade transiciones suaves */
+    border-radius: 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-
-/* Efecto al pasar el mouse por encima del botón */
 nav button:hover {
-    background-color: #b90101; /* Cambia el color del fondo al hacer hover */
-    transform: scale(1.05); /* Aumenta el tamaño ligeramente */
-}
-
-
-nav {
-    display: flex; /* Agregar esta línea para que los botones estén en línea */
-}
-
-/* Estilo para el botón activo */
-nav button.active {
-    background-color: #e74c3c; /* Rojo */
-}
-
-/* Estilo para las secciones */
-section {
-    margin: 20px 0;
-    display: none;
-    margin-bottom: 100px; /* Ajusta este valor según sea necesario para dejar suficiente espacio para el pie de página */
-    margin-left: 100px; /* Agrega un margen a la izquierda de la pantalla */
-    margin-right: 100px; /* Agrega un margen a la derecha de la pantalla */
-    
+    background-color: #b90101;
+    transform: scale(1.05);
 }
 
 /* Estilo para la sección visible */
+section {
+    margin: 20px auto;
+    display: none;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+}
+
 section.visible {
     display: block;
-    margin-bottom: 100px; /* Ajusta este valor según sea necesario para dejar suficiente espacio para el pie de página */
-    background-color: #ffffff; /* Color de fondo del cuadro de texto */
-    padding: 10px; /* Espaciado interno para separar el texto del borde del cuadro */
-    border-radius: 10px; /* Bordes redondeados para el cuadro */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave para el cuadro */
-    display: inline-block; /* Permite que el contenedor se ajuste al tamaño del contenido */
 }
 
 /* Estilo para el pie de página */
 footer {
     text-align: center;
-    padding: 2px;
-    background-color: #0f6096; /* Azul rey */
+    padding: 10px;
+    background-color: #0f6096;
     color: white;
     position: fixed;
     bottom: 0;
     width: 100%;
-    border-radius: 15px; /* Hace que las esquinas sean redondeadas */
+    border-radius: 15px;
 }
 
-
-.respuesta_f {
-    display: none;
-    /* Puedes agregar estilos adicionales para la respuesta oculta aquí */
-}
-
-
-#preguntasFrecuentes ol li {
-    margin-bottom: 20px; /* Ajusta este valor según sea necesario para aumentar el espacio entre cada pregunta y respuesta */
-    cursor: pointer;
-}
-
+/* WhatsApp Bubble */
 .whatsapp-bubble {
     position: fixed;
-    bottom: 20px; /* Puedes ajustar esta distancia según tu diseño */
-    right: 20px; /* Puedes ajustar esta distancia según tu diseño */
+    bottom: 20px;
+    right: 20px;
     width: 60px;
     height: 60px;
-    /*background-color: green; /* Color de fondo de la burbuja */
-    /*border-radius: 50%; /* Hace que la burbuja sea redonda */
-    /*box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease-in-out; /* Añade una transición suave al hacer hover */
-    z-index: 9999; /* Ajusta este valor según sea necesario para asegurarte de que esté por encima de otros elementos */
-}
-
-.whatsapp-bubble:hover {
-    transform: scale(1.5); /* Hace que la burbuja se agrande un poco al hacer hover */
+    z-index: 9999;
+    transition: transform 0.3s ease-in-out;
 }
 
 .whatsapp-bubble img {
-    width: 100px; /* Tamaño del ícono de WhatsApp */
-    height: auto; /* Altura automática para mantener la proporción */
+    width: 100%;
+    height: auto;
 }
 
-@keyframes jumpBubble {
-    0% { transform: translateX(0); }
-    50% { transform: translateX(-20px); }
-    100% { transform: translateX(0); }
+.whatsapp-bubble:hover {
+    transform: scale(1.5);
 }
 
-.whatsapp-bubble {
-    animation: jumpBubble 2s ease infinite; /* La animación dura 0.5 segundos y se repite infinitamente */
-}
-
-
+/* Productos */
 .productos {
-    display: flex;
-    flex-direction: column; /* Apila los productos verticalmente */
-    gap: 20px; /* Espacio entre tarjetas */
-    align-items: center; /* Centra los productos horizontalmente */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
 }
 
-/* Tarjeta de cada producto */
 .producto {
-    text-align: center; /* Centra el texto e imágenes */
-    background-color: #f9f9f9; /* Fondo claro para resaltar cada producto */
-    border-radius: 10px; /* Bordes redondeados */
-    padding: 15px; /* Espaciado interno */
-    width: 80%; /* Ancho ajustable */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efecto al pasar el mouse sobre la tarjeta */
 .producto:hover {
-    transform: scale(1.05); /* Amplía ligeramente la tarjeta */
-    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Imagen del producto */
 .producto img {
-    max-width: 150px; /* Establece un tamaño máximo para el ancho de la imagen */
-    border-radius: 10px; /* Esquinas redondeadas */
-    height: auto; /* Mantiene la proporción de la imagen */
-    margin: 0 auto; /* Centra la imagen horizontalmente */
-    display: block; /* Asegura que el centrado funcione correctamente */
+    max-width: 100%;
+    border-radius: 10px;
+    height: auto;
 }
 
-/* Nombre del producto */
-.producto h3 {
-    font-size: 18px;
-    margin: 10px 0;
+/* Media Queries */
+@media (max-width: 768px) {
+    header {
+        font-size: 14px;
+        padding: 20px;
+    }
+
+    .logo {
+        top: 5px;
+        right: 5px;
+        width: 30%;
+    }
+
+    nav button {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    footer {
+        font-size: 12px;
+    }
 }
 
-/* Descripción */
-.producto p {
-    font-size: 14px;
-    color: #555;
-    margin: 5px 0;
-}
+@media (max-width: 480px) {
+    body {
+        margin: 10px;
+    }
 
-/* Precio */
-.producto span {
-    font-weight: bold;
-    color: #0367ad;
+    .whatsapp-bubble {
+        width: 50px;
+        height: 50px;
+    }
+
+    .whatsapp-bubble img {
+        width: 80%;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    .producto {
+        padding: 10px;
+    }
 }
