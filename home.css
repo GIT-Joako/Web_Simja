@@ -2,7 +2,7 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background-image: url('Imagenes/Piedra.jpg');
+    background-color: white;
     background-size: cover;
     background-position: center;
 }
@@ -10,6 +10,7 @@ body {
 /* Contenedor principal */
 main {
     margin: 20px;
+    padding-bottom: 60px; /* Espacio para el footer */
 }
 
 /* Estilos del encabezado */
@@ -24,15 +25,17 @@ header {
 
 .logo {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 20%;
+    top: 10px; /* Ajusta la posición vertical */
+    right: 10px; /* Ajusta la posición horizontal */
+    width: auto; /* Cambia de 20% a auto para evitar desbordamiento */
+    max-width: 150px; /* Define un ancho máximo para pantallas grandes */
+    height: auto; /* Mantén la proporción del logo */
 }
 
 .logo img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 15px;
+    max-width: 100%; /* Asegura que la imagen no exceda su contenedor */
+    height: auto; /* Mantén la proporción */
+    border-radius: 15px; /* Bordes redondeados */
 }
 
 /* Estilos del botón de navegación */
@@ -77,16 +80,63 @@ section.visible {
     display: block;
 }
 
+section:not(.visible) {
+    display: none;
+}
+
 /* Estilo para el pie de página */
 footer {
     text-align: center;
     padding: 10px;
     background-color: #0f6096;
     color: white;
-    position: fixed;
+    position: relative; /* Cambiar de fixed a relative */
     bottom: 0;
     width: 100%;
     border-radius: 15px;
+    margin-top: 20px; /* Espacio superior */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-links button {
+    background-color: #0367ad;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-links button:hover {
+    background-color: #b90101;
+    transform: scale(1.05);
+}
+
+@media (max-width: 480px) {
+    .footer-links {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .footer-links button {
+        width: 100%;
+        padding: 10px;
+    }
 }
 
 /* WhatsApp Bubble */
@@ -167,6 +217,12 @@ footer {
         margin: 10px;
     }
 
+    .logo {
+        top: 5px; /* Ajusta la posicion vertical para los moviles */
+        right: 5px; /* Ajusta la posición horizontal para moviles */
+        max-width: 100px; /* Reduce el tamaño original del lopgo en moviles */
+    }
+
     .whatsapp-bubble {
         width: 50px;
         height: 50px;
@@ -182,5 +238,124 @@ footer {
 
     .producto {
         padding: 10px;
+    }
+}
+
+
+/* Estilos del Carrusel */
+.carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 15px;
+    padding: 20px 0; /* Espacio para los botones */
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    position: relative; /* Agregado */
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    opacity: 0;
+    position: absolute; /* Cambiado de static a absolute */
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+    position: relative; /* Sobreescribe para el slide activo */
+    z-index: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 16/9; /* Proporción responsive */
+}
+
+.carousel-prev { left: 15px; }
+.carousel-next { right: 15px; }
+
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    transition: background 0.3s;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+.carousel-prev, 
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7) !important; /* Fondo más oscuro */
+    color: white !important; /* Texto blanco visible */
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 5; /* Asegura que esté por encima del carrusel */
+    transition: background 0.3s;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 5; /* Por encima del carrusel */
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.indicator.active {
+    background: #0f6096; /* Color destacado para el indicador activo */
+}
+
+@media (max-width: 768px) {
+    .carousel-prev, .carousel-next {
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .logo {
+        max-width: 150px; /* Ancho máximno para pantallas grandes */
+    }
+
+    .carousel-container {
+        height: auto; /* Altura automática para adaptarse al contenido */
+    }
+
+    .slide img {
+        height: auto;
+        object-fit: cover;
     }
 }

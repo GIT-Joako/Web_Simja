@@ -17,30 +17,42 @@
     </header>
 
     <nav>
-        <button onclick="mostrarInicio()">NUESTROS SERVICIOS</button>
-        <button onclick="mostrarQuienesSomos()">¿QUIÉNES SOMOS?</button>
-        <button onclick="mostrarCatalogo()">CATÁLOGO</button>
-        <button onclick="mostrarPreguntasFrecuentes()">PREGUNTAS FRECUENTES</button>
+        <button onclick="mostrarInicio()">TEMPORADA</button>
+        <button onclick="mostrarCatalogo()">PRODUCTO</button>
     </nav>
 
 
-    <section id="inicio" class="oculto">
-        <h1>NUESTROS SERVICIOS</h1>
-        <p>Tenemos personal con experiencia para ofrecer soluciones virtuales y presenciales a tus problemas.</p>
-        <p>Reflexionamos tus ideas para alcanzar los objetivos con un enfoque innovador.</p>
-    
-        <h2>LO QUE HACEMOS</h2>
-        <p><strong>DESARROLLO A MEDIDA:</strong> Entendemos los problemas de tiempo y acceso a soluciones prontas que la gestión de una institución tiene para satisfacer sus necesidades. Por ello, nuestra atención, virtual y presencial, es a medida de lo que necesites. Simplificamos la obtención de una solución con preocupación a la eficiencia y eficacia.</p>
-        <p><strong>APOYAMOS INSTITUCIONES PRIVADAS Y PÚBLICAS:</strong> Tenemos experiencia atendiendo requerimientos de entidades privadas y públicas.</p>
+    <section id="inicio">
+        <!-- En la sección del carrusel, agregar alturas máximas -->
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <div class="slide active">
+                    <img src="Imagenes/galvano.jpg" alt="Banner 1">
+                </div>
+                <div class="slide">
+                    <img src="Imagenes/medalla.jpeg" alt="Banner 2">
+                </div>
+                <div class="slide">
+                    <img src="Imagenes/piocha.png" alt="Banner 3">
+                </div>
+            </div>
+            <!-- ... resto del carrusel ... -->
+            <button class="carousel-prev">&#10094;</button>
+            <button class="carousel-next">&#10095;</button>
+            <div class="carousel-indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+        </div>
     </section>
     
     <div class="whatsapp-bubble">
-        <a href="https://wa.me/+56984843992?text=Hola,%20estoy%20interesado%20en%20tu%20producto." target="_blank">
+        <a href="https://wa.me/+56946799683?text=Hola,%20estoy%20interesado%20en%20tu%20producto." target="_blank">
             <img src="Imagenes/Whatsapp.png" alt="Icono de WhatsApp">
         </a>
     </div>
 
-    <section id="quienesSomos" class="oculto">
+    <section id="quienesSomos">
         <h1>¿QUIÉNES SOMOS?</h1>
         <p>Somos una miniempresa on line sustentada en altos estándares de profesionalismo y experiencia para entregar un servicio de calidad y sustentable en el uso de los recursos y del medioambiente.</p>
         <h3>MISIÓN</h3>
@@ -81,7 +93,7 @@
 
     </section>
 
-    <section id="catalogo" class="oculto">
+    <section id="catalogo">
         <h1>CATÁLOGO</h1>
         <h2>Explora nuestro catálogo de productos</h2>
         <div class="productos">
@@ -90,27 +102,27 @@
                 <img src="Imagenes/galvano.jpg" alt="galvano">
                 <h3>GALVANO CON LOGO</h3>
                 <p>Elegante galvano personalizado, ideal para reconocimientos, premiaciones o regalos corporativos. Fabricado con materiales de alta calidad, su diseño incluye el logo de tu empresa o institución, destacando profesionalismo y exclusividad. Perfecto para dejar una impresión duradera.</p>
-                <span>Cotizar al +56984843992</span>
+                <span>Cotizar +56946799683 o ventas@simjasmile.cl</span>
             </div>
             <!-- Producto 2 -->
             <div class="producto">
                 <img src="Imagenes/medalla.jpeg" alt="medalla">
                 <h3>MEDALLA CON LOGO</h3>
                 <p>Medalla personalizada de alta calidad con el logo de tu institución o empresa. Ideal para premiaciones, eventos deportivos y reconocimientos especiales.</p>
-                <span>Cotizar al +56984843992</span>
+                <span>Cotizar +56946799683 o ventas@simjasmile.cl</span>
             </div>
             <!-- Producto 3 -->
             <div class="producto">
                 <img src="Imagenes/piocha.png" alt="piocha">
                 <h3>PIOCHA LOGO</h3>
                 <p>Piocha personalizada con el logo de tu organización. Perfecta para eventos, reconocimientos o como detalle corporativo, combinando elegancia y distinción.</p>
-                <span>Cotizar al +56984843992 o chatear en WhatsApp</span>
+                <span>Cotizar +56946799683 o ventas@simjasmile.cl</span>
             </div>
         </div>
 
     </section>
 
-    <section id="preguntasFrecuentes" class="oculto">
+    <section id="preguntasFrecuentes">
         <h1>PREGUNTAS FRECUENTES:</h1>
         <ol>
             <li>
@@ -144,7 +156,14 @@
 
 
     <footer>
-        <p>&copy; 2024 SIMJA. TODOS LOS DERECHOS RESERVADOS.</p>
+        <div class="footer-content">
+            <p>&copy; 2025 SIMJA. TODOS LOS DERECHOS RESERVADOS.</p>
+            <p>Reclamos y Sugerencias gerencia@simjasmile.cl</p>
+            <div class="footer-links">
+                <button onclick="mostrarSeccion('quienesSomos')">¿QUIÉNES SOMOS?</button>
+                <button onclick="mostrarSeccion('preguntasFrecuentes')">PREGUNTAS FRECUENTES</button>
+            </div>
+        </div>
     </footer>
 
     <script src="home.js"></script>
