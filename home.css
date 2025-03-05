@@ -161,6 +161,17 @@ footer {
     height: auto;
 }
 
+.banner-personalizable {
+    background-color: #e6f7ff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 /* Carrusel */
 .carousel-container {
     position: relative;
@@ -174,7 +185,7 @@ footer {
 
 .carousel-slide {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: opacity 1s ease-in-out;
 }
 
 .slide {
@@ -183,7 +194,7 @@ footer {
     position: absolute;
     top: 0;
     left: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 1s ease-in-out;
 }
 
 .slide.active {
@@ -215,13 +226,13 @@ footer {
     top: 50%;
     transform: translateY(-50%);
     background: rgba(0, 0, 0, 0.7);
-    color: white;
+    color: rgb(255, 255, 255);
     border: none;
     padding: 15px;
     cursor: pointer;
     font-size: 24px;
     z-index: 5;
-    transition: background 0.3s;
+    transition: opacity 1s ease-in-out;
 }
 
 .carousel-prev:hover,
@@ -242,14 +253,27 @@ footer {
 .indicator {
     width: 12px;
     height: 12px;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(136, 141, 232, 0.7);
     border-radius: 50%;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: opacity 1s ease-in-out;
 }
 
 .indicator.active {
     background: #0f6096;
+}
+
+.banner-personalizable-carousel {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 5;
 }
 
 /* Media Queries */

@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Autoplay
-    setInterval(nextSlide, 5000);
+    setInterval(nextSlide, 6000);
 
     nextBtn.addEventListener('click', (e) => {
         e.stopPropagation();
