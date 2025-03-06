@@ -194,7 +194,8 @@ footer {
     position: absolute;
     top: 0;
     left: 0;
-    transition: opacity 1s ease-in-out;
+    /* Agrega esta línea para la transición */
+    transition: opacity 2s ease-in-out; /* Duración: 0.5 segundos */
 }
 
 .slide.active {
@@ -264,13 +265,18 @@ footer {
 }
 
 .banner-personalizable-carousel {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 15px 30px;
-    border-radius: 25px;
+    text-align: center;
+    background-color: #0f6096; /* Color similar al footer/nav */
+    color: white;
+    padding: 15px;
+    border-radius: 15px;
+    margin: 10px 20px; /* Margen consistente con el main */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.banner-personalizable-carousel p {
+    margin: 0;
+    font-size: 1.2em;
     font-weight: bold;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     z-index: 5;

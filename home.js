@@ -35,6 +35,13 @@ document.addEventListener("DOMContentLoaded", function() {
     const nextBtn = document.querySelector('.carousel-next');
     const indicators = document.querySelectorAll('.indicator');
     let currentSlide = 0;
+    let autoplayInterval;   
+
+    // Validación de slides
+    if (slides.length === 0) {
+        console.error("No hay slides en el carrusel.");
+        return;
+    }
 
     function showSlide(index) {
         // Ocultar todos los slides
@@ -64,22 +71,40 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Autoplay
-    setInterval(nextSlide, 6000);
+    function startAutoplay() {
+        autoplayInterval = setInterval(nextSlide, 6000); // <<< Usar la variable "autoplayInterval"
+    }
 
+    function stopAutoplay() {
+        clearInterval(autoplayInterval); // <<< Detiene el intervalo
+    }
+
+
+    // Eventos para flechas
     nextBtn.addEventListener('click', (e) => {
         e.stopPropagation();
+        stopAutoplay(); // <<< Detiene autoplay al hacer clic
         nextSlide();
+        startAutoplay(); // <<< Reinicia autoplay después del clic
     });
     
     prevBtn.addEventListener('click', (e) => {
         e.stopPropagation();
+        stopAutoplay(); // <<< Detiene autoplay al hacer clic
         prevSlide();
+        startAutoplay(); // <<< Reinicia autoplay después del clic
     });
     
+    // Eventos para indicadores
     indicators.forEach((indicator, index) => {
         indicator.addEventListener('click', () => {
+            stopAutoplay(); // <<< Detiene autoplay al hacer clic
             currentSlide = index;
             showSlide(currentSlide);
+            startAutoplay(); // <<< Reinicia autoplay después del clic
         });
     });
+
+    // Inicia autoplay al cargar la página
+    startAutoplay(); // <<< Llama a la nueva función
 });
